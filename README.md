@@ -3,7 +3,7 @@ Website for ChiVO
 
 ## Notes to install django:
 ### 1. Create the virtual environtment
-First of all, create the virtual environtment. The following command should work:
+First of all, create the virtual environtment. The following command should work (Of curse you have to have installed virtualenv in python):
 ```bash
 virtualenv chivowebenv
 ```
