@@ -1,0 +1,32 @@
+{% extends "base2.html" %}
+
+{% load static %}
+{% block customstyle %}<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.services.css' %}" />{% endblock %}
+{% block title %}ChiVO - Services{% endblock %}
+
+{% block content %}
+	<section>
+		<div class="content">
+		{% for service in services %}
+			<div class="service">
+				<h1 id="{{ service.name }}">{{ service.name }}</h1>
+				<div class="subservices">
+				{% for subservice in service.subservices %}
+					<article>
+						{% if subservice.image %}
+						<div class="image"><div class="img"><img src="/media/{{ subservice.image }}"/></div></div>
+						{% endif %}
+						<div class="text">
+							<h3><a href="{{ subservice.link }}">{{ subservice.name }}</a></h3>
+							<div class="desc">{{ subservice.content|safe }}</div>
+							<div class="button"><a href="{{ subservice.link }}"><button>Go to service</button></a></div>
+						</div>
+					</article>
+				{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</section>
+{% endblock %}

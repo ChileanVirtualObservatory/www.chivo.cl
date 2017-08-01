@@ -1,0 +1,60 @@
+{% extends "base2.html" %}
+
+{% load news_filters %}
+
+{% load static %}
+{% block customstyle %}<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.index.css' %}" />{% endblock %}
+{% block customscript %}<script src="{% static 'news/js/index.js' %}"></script>{% endblock %}
+{% block title %}ChiVO - News{% endblock %}
+
+{% block content %}
+	<section id="news">
+		<div class="content">
+			<div class="right">
+				<h1>ChiVO News:</h1>
+				<div class="sub-container">
+					<div class="sub-content">
+					{% if news %}
+						{% for article in news %}
+						<article>
+							{% if article.image|length > 0 %}<a href="{% url 'news:article' article.id %}"><div class="image"><img src="{{ article.image }}" draggable="false"/></div></a>{% endif %}
+							<div class="article-content">
+								<a href="{% url 'news:article' article.id %}"><h3>{{ article.title }}</h3></a>
+								<div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <span>Publicaci&oacute;n:</span> {{ article.pub_date }}</div>
+								<div class="text">{{ article.content|removetags:"img"|safe|truncatechars_html:250 }}</div>
+							</div>
+						</article>
+						{% endfor %}
+					{% else %}
+						<p>No Articles are available.</p>
+					{% endif %}
+					</div>
+				</div>
+				{% if is_paginated %}
+				<div class="pagination">
+					<span class="page-links">
+						{% if page_obj.has_previous %}<a href="/news?page={{ page_obj.previous_page_number }}"><div class="button"><i class="fa fa-caret-left" aria-hidden="true"></i></div></a>{% else %}<div class="button disabled"><i class="fa fa-caret-left" aria-hidden="true"></i></div>{% endif %}
+						<div class="page-current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</div>
+						{% if page_obj.has_next %}<a href="/news?page={{ page_obj.next_page_number }}"><div class="button"><i class="fa fa-caret-right" aria-hidden="true"></i></div></a>{% else %}<div class="button disabled"><i class="fa fa-caret-right" aria-hidden="true"></i></div>{% endif %}
+					</span>
+				</div>
+				{% endif %}
+			</div>
+			<aside>
+			{% if pop %}
+				<h3>Most viewed News:</h3>
+				{% for article in pop %}
+				<article>
+					<div class="title"><a href="{% url 'news:article' article.id %}"><h4>{{ article.title }}</h4></a></div>
+					<div class="date"><i class="fa fa-calendar" aria-hidden="true"></i> <span>Publicaci&oacute;n:</span> {{ article.pub_date }}</div>
+					<div class="text">{{ article.content|removetags:"img"|safe|truncatechars_html:200 }}</div>
+				</article>
+				{% endfor %}
+			{% else %}
+				<p>No Articles are available.</p>
+			{% endif %}
+			</aside>
+		</div>
+	</section>
+{% endblock %}

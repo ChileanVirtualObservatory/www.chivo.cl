@@ -1,0 +1,50 @@
+{% block header %}
+	<header>
+		<nav id="menu-desktop">
+			<ul>
+				<li class="nav"><a href="/"><div>Home</div></a></li>
+				<li class="nav"><a href="/staff"><div>Staff</div></a></li>
+				<li class="nav">
+					<a href="/services"><div>Services</div></a>
+					<ul>
+					{% for service in services %}
+						<li><a href="/services#{{ service.name }}"><div>{{ service.name }}</div></a></li>
+					{% endfor %}
+					</ul>
+				</li>
+				<li class="nav"><a href="/news"><div>News</div></a></li>
+			</ul>
+			<a href="/"><div class="logo"></div></a>
+			<ul>
+				<li class="nav"><a href="/documents"><div>Documents</div></a></li>
+				<li class="nav"><a href="/history"><div>History</div></a></li>
+				<li class="nav"><a href="/datacenter"><div>Datacenters</div></a></li>
+			</ul>
+		</nav>
+		<nav id="menu-mobile">
+			<div class="button-container">
+				<div class="button"></div>
+			</div>
+			<a href="/"><div class="logo"></div></a>
+			<div class="shadow"></div>
+			<aside class="menu">
+				<div class="close"></div>
+				<ul>
+					<li class="nav"><a href="/"><div>Home Page</div></a></li>
+					<li class="nav"><a href="/institutions"><div>Institutions</div></a></li>
+					<li class="nav"><a href="/news"><div>News</div></a></li>
+					<li class="nav">
+						<a href="/services"><div>Services</div></a>
+						<ul>
+							<li><a href="#"><div>CONE Search</div></a></li>
+							<li><a href="#"><div>Image Search</div></a></li>
+							<li><a href="#"><div>Spectral Search</div></a></li>
+						</ul>
+					</li>
+					<li class="nav"><a href="/history"><div>History</div></a></li>
+					<li class="nav"><a href="/datacenter"><div>Datacenter</div></a></li>
+				</ul>
+			</aside>
+		</nav>
+	</header>
+{% endblock %}

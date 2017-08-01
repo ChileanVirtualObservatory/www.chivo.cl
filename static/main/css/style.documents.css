@@ -1,0 +1,79 @@
+section .content{
+	border-radius: 1px;
+	background: #FFF;
+	border: 1px solid #EEE;
+	border-radius: 1px;
+	box-shadow: 0 1px 5px #EEE;
+	padding: 20px !important;
+}
+section .content > h1{
+	margin-bottom: 10px;
+}
+section .content article{
+	border-top: 1px dashed #EEE;
+	padding: 16px 10px;
+}
+section .content article:last-child{
+	margin-bottom: 0;
+}
+section .content article .top{
+	margin-bottom: 8px;
+}
+section .content article .top span.type{
+	background-color: #EEE;
+	color: #666;
+	padding: 2px 4px;
+	border-radius: 2px;
+}
+section .content article .top span.date{
+	color: #999;
+	padding: 0 10px;
+}
+section .content article > h3{
+	padding: 0 10px;
+}
+section .content article .inner-paper{
+	padding: 5px 10px;
+}
+section .content article .inner-paper .author{
+	color: #999;
+	margin-bottom: 6px;
+}
+section .content article .inner-thesis{
+	padding: 5px 10px;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+}
+section .content article .inner-thesis .text{
+	flex: 2;
+	width: 100%;
+}
+section .content article .inner-thesis .info{
+	margin-right: 10px;
+}
+section .content article .inner-thesis .info .text-info{
+	padding: 2px;
+	color: #666;
+}
+section .content article .link{
+	padding: 6px 10px;
+	background-color: #EEE;
+	color: #999;
+	border-radius: 2px;
+	text-align: right;
+	transition: .15s;
+	margin-top: 10px;
+}
+section .content article .link:hover{
+	background-color: #F6F6F6;
+}
+section .content article .link:active{
+	background-color: #DDD;
+	color: #666;
+}
+section .content article a{
+	color: inherit;
+	text-decoration: none;
+	outline: none;
+}

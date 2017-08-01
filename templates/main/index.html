@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block customstyle %}<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.home.css' %}"/>{% endblock %}
+{% block customscript %}<script src="{% static 'main/js/home.js' %}"></script>{% endblock %}
+{% block title %}ChiVO - Home Page{% endblock %}
+
+{% block content %}
+	<section id="home">
+		<div class="background">
+			<img src="{% static 'main/img/wallpaper.jpg' %}" draggable="false"/>
+		</div>
+		<div class="content">
+			<div class="text-box">
+				<h2>What is CHIVO?</h2>
+				<p>The Chilean Virtual Observatory (CHIVO) is a VO developed in Chile and it is one of many VO projects currently underway in the world. It was born out of the need to archive data that require large storage capacities and the need to develop new tools for the analyzing large volumes of data and better algorithms for intelligent processing of astronomical data, this due to the volumes of large scale data that will generate the astronomical observatories in Chile, mainly the ALMA project that will generate over 1TB of data per day, and in this form be to able to store the data in the local territory to optimize the observation time of the chilean astronomers.</p>
+				<p>Chivo is an initiative of the five most prestigious universities in the country, supported by the private institutions ALMA and REUNA. In addition of the use of the VO by scientists of astronomy area, the VO will be useful too for the students of schools, especially of schools of rural areas.</p>
+				<div class="separator"></div>
+				<h2>What is the VO?</h2>
+				<p>The Virtual Observatory (VO) is a network constructed by many different people and organisations and spread all over the world explore astronomical data in a single transparent system. The VO will facilitate astronomy research inquiring multiple data centers in a seamless way, providing new powerful and efficient research click here now. The VO gives datacenters a standard framework for publishing and delivering service using their data by standarization of data and metadata by standardization of data exchange methods, and by the use of a registry, which lists available services and what can be done with them. The data will be available to all researchers, independent of their affiliation or access to observing facilities.</p>
+			</div>
+		</div>
+		<div class="arrow"></div>
+	</section>
+	<section id="info">
+		<div class="video">
+			<div class="content">
+				<h2>Astroinformatics</h2>
+				<!-- w658 x h370 -->
+				<iframe id="video" src="https://player.vimeo.com/video/76644462" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+		</div>
+		<div class="about">
+			<div class="text">
+				<h2>About ChiVO</h2>
+				<p>The Virtual Observatory Network is an international initiative designed to hold all astronomy data in a single, transparent system, making the data available to all researchers regardless of their affiliation or access to observation facilities.</p>
+				<p>The Chilean Virtual Observatory (ChiVO) is one of many now in development around the world. The scientific data obtained from ALMA are the property of the lead researcher on each observation proposal for one year. After that time, the data become public and any scientist may request access to them.</p>
+				<p>According to experts, ChiVO will be a useful tool not only for astronomers, but also for Chile's educational establishments. "Although the priority of ChiVO is to serve as a tool for professional astronomers, there are aspects of it that will enable easy adaptation for use in schools. Therefore, one of the project's objectives is to bring ALMA data to Chile's schools once the educational aspects are being implemented," explained Mardones.</p>
+			</div>
+		</div>
+	</section>
+{% endblock %}

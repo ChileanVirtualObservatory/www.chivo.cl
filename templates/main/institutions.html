@@ -1,0 +1,94 @@
+{% extends "base2.html" %}
+
+{% load static %}
+{% block customstyle %}<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.institutions.css' %}" />{% endblock %}
+{% block customscript %}<script src="{% static 'main/js/institutions.js' %}"></script>{% endblock %}
+{% block title %}ChiVO - Institutions{% endblock %}
+
+{% block content %}
+	<section id="staff">
+		<div class="content">
+			<aside>
+				<h2>Institutions:</h2>
+				<ul>
+				{% for institution in institutions %}
+					<li>
+						<div>
+							<a href="{{ institution.link }}"><img draggable="false" src="/media/{{ institution.image }}"/></a>
+							<a href="{{ institution.link }}"><h4>{{ institution.name }}</h4></a>
+						</div>
+					</li>
+				{% endfor %}
+				</ul>
+			</aside>
+			<div class="sub-content">
+				<h2>Staff:</h2>
+				{% if staff %}
+
+				<h3>Management Team</h3>
+				<ul>
+				{% for person in staff %}
+				{% if person.area == "0" %}
+					<li>
+						<div class="person" data-name="{{ person.name }}" data-cargo="{{ person.position }}" data-email="{{ person.email }}" data-image="/media/{{ person.image }}">
+							<div class="image">{% if person.image %}<img draggable="false" src="/media/{{ person.image }}" />{% endif %}</div>
+							<div class="name">{{ person.name }}</div>
+						</div>
+					</li>
+				{% endif %}
+				{% endfor %}
+				</ul>
+
+				<h3>Scientific Team</h3>
+				<ul>
+				{% for person in staff %}
+				{% if person.area == "1" %}
+					<li>
+						<div class="person" data-name="{{ person.name }}" data-cargo="{{ person.position }}" data-email="{{ person.email }}" data-image="/media/{{ person.image }}">
+							<div class="image">{% if person.image %}<img draggable="false" src="/media/{{ person.image }}" />{% endif %}</div>
+							<div class="name">{{ person.name }}</div>
+						</div>
+					</li>
+				{% endif %}
+				{% endfor %}
+				</ul>
+
+
+				<h3>Technical Personnel</h3>
+				<ul>
+				{% for person in staff %}
+				{% if person.area == "2" %}
+					<li>
+						<div class="person" data-name="{{ person.name }}" data-cargo="{{ person.position }}" data-email="{{ person.email }}" data-image="/media/{{ person.image }}">
+							<div class="image">{% if person.image %}<img draggable="false" src="/media/{{ person.image }}" />{% endif %}</div>
+							<div class="name">{{ person.name }}</div>
+						</div>
+					</li>
+				{% endif %}
+				{% endfor %}
+				</ul>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+	<div class="shadowbg hide">
+		<aside id="staff-info">
+			<div class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+			<h1>Profile:</h1>
+			<div class="content">
+				<div class="image"><img id="info-image" draggable="false" /></div>
+				<div id="info-name" class="name"></div>
+				<div class="info">
+					<span>Cargo:</span>
+					<span id="info-position"></span>
+				</div>
+				<div class="info">
+					<span>Email:</span>
+					<span id="info-email"></span>
+				</div>
+			</div>
+		</aside>
+	</div>
+
+{% endblock %}

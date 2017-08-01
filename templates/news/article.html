@@ -1,0 +1,42 @@
+{% extends "base2.html" %}
+
+{% load news_filters %}
+
+{% load static %}
+{% block customstyle %}<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.article.css' %}" />{% endblock %}
+{% block customscript %}<script src="{% static 'news/js/index.js' %}"></script>{% endblock %}
+{% block title %}ChiVO - {{ article.title }}{% endblock %}
+
+{% block content %}
+	<section id="article">
+		<div class="content">
+			<div class="article">
+				<div class="path">
+					<a href="/news">News</a>
+					<span>/</span>
+					<a href="{% url 'news:article' article.id %}">{{ article.title }}</a>
+				</div>
+				<div class="sub-content">
+					<h1>{{ article.title }}</h1>
+					<div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <span>Fecha de Publicaci&oacute;n:</span> {{ article.pub_date }}</div>
+					<div class="text">{{ article.content|safe }}</div>
+				</div>
+			</div>
+			<aside>
+			{% if pop %}
+				<h3>Most viewed News:</h3>
+				{% for article in pop %}
+				<article>
+					<div class="title"><a href="{% url 'news:article' article.id %}"><h4>{{ article.title }}</h4></a></div>
+					<div class="date"><i class="fa fa-calendar" aria-hidden="true"></i> <span>Publicaci&oacute;n:</span> {{ article.pub_date }}</div>
+					<div class="text">{{ article.content|removetags:"img"|safe|truncatechars_html:200 }}</div>
+				</article>
+				{% endfor %}
+			{% else %}
+				<p>No Articles are available.</p>
+			{% endif %}
+			</aside>
+		</div>
+	</section>
+{% endblock %}

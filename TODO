@@ -1,0 +1,9 @@
+- Logging system | path: /var/log/django/chivo
+- Finnish Templates
+	- HomePage: Description Text
+	- News template
+	- Services content
+	- Datacenter content
+	- Footer Section
+- Finnish News system (save images)
+- Implement registration services system in django admin

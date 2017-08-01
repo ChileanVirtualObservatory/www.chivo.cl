@@ -1,0 +1,7 @@
+.backups/
+chivo_nginx.conf
+chivo_uwsgi.ini
+chivowebenv/
+.logs/
+.sql-backups/
+uwsgi_params

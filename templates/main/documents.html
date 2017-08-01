@@ -1,0 +1,61 @@
+{% extends "base2.html" %}
+
+{% load static %}
+{% block customstyle %}<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.documents.css' %}" />{% endblock %}
+{% block title %}ChiVO - Documents{% endblock %}
+
+{% block content %}
+	<section id="docs">
+		<div class="content">
+		{% if docs %}
+			<h1>Papers</h1>
+			{% for doc in papers %}
+				<article>
+					<div class="top"><span class="type">{{ doc.type|capfirst }}</span> <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ doc.date|date:"F Y" }}</span></div>
+					<h3>{{ doc.title }}</h3>
+					{% if doc.type == "paper" %}
+					<div class="inner-paper">
+						<div class="author"><i class="fa fa-users" aria-hidden="true"></i> Author(s): {{ doc.author }}</div>
+						<div class="text">{{ doc.description|safe }}</div>
+					</div>
+					{% elif doc.type == "thesis" %}
+					<div class="inner-thesis">
+						<div class="info">
+							<h4>{{ doc.author }}</h4>
+							<div class="text-info">{{ doc.info|safe }}</div>
+						</div>
+						<div class="text">{{ doc.description|safe }}</div>
+					</div>
+					{% endif %}
+					<a href="{{ doc.link }}"><div class="link"> View document <i class="fa fa-file-text" aria-hidden="true"></i> <i class="fa fa-caret-right" aria-hidden="true"></i></div></a>
+				</article>
+			{% endfor %}
+			<h1>Thesis</h1>
+			{% for doc in thesis %}
+				<article>
+					<div class="top"><span class="type">{{ doc.type|capfirst }}</span> <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ doc.date|date:"F Y" }}</span></div>
+					<h3>{{ doc.title }}</h3>
+					{% if doc.type == "paper" %}
+					<div class="inner-paper">
+						<div class="author"><i class="fa fa-users" aria-hidden="true"></i> Author(s): {{ doc.author }}</div>
+						<div class="text">{{ doc.description|safe }}</div>
+					</div>
+					{% elif doc.type == "thesis" %}
+					<div class="inner-thesis">
+						<div class="info">
+							<h4>{{ doc.author }}</h4>
+							<div class="text-info">{{ doc.info|safe }}</div>
+						</div>
+						<div class="text">{{ doc.description|safe }}</div>
+					</div>
+					{% endif %}
+					<a href="/media/{{ doc.file }}"><div class="link"> View document <i class="fa fa-file-text" aria-hidden="true"></i> <i class="fa fa-caret-right" aria-hidden="true"></i></div></a>
+				</article>
+			{% endfor %}
+		{% else %}
+			<h1>Documents</h1>
+		{% endif %}
+		</div>
+	</section>
+{% endblock %}

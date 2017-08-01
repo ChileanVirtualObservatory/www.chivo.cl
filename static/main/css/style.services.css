@@ -1,0 +1,84 @@
+section .content{
+	border-radius: 1px;
+	background: #FFF;
+	border: 1px solid #EEE;
+	border-radius: 1px;
+	box-shadow: 0 1px 5px #EEE;
+	padding: 0 !important;
+}
+section .content .service h1{
+	padding: 20px;
+	border-bottom: 1px solid #EEE;
+}
+
+section .content .service .subservices article{
+	overflow: hidden;
+	border-bottom: 1px solid #EEE;
+	display: flex;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+section .content .service .subservices article a{
+	color: #2274AE;
+	text-decoration: none;
+}
+section .content .service .subservices article a:hover{
+	color: #42AAF4;
+	text-decoration: underline;
+}
+section .content .service .subservices article a:active{
+	color: #2274AE;
+	text-decoration: underline;
+}
+section .content .service .subservices article:nth-child(2n){flex-direction: row-reverse;}
+section .content .service:last-child .subservices article:last-child{border-bottom-width: 0px;}
+section .content .service .subservices article .img{
+	height: 100%;
+	background: #FEFEFE;
+	border-right: 1px solid #EEE;
+	border-left: 0px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+section .content .service .subservices article .img img{
+	max-width: 200px;
+	max-height: 100%;
+}
+section .content .service .subservices article:nth-child(2n) .img{
+	border-right: 0px;
+	border-left: 1px solid #EEE;
+}
+section .content .service .subservices article .text{
+	flex: 2;
+	width: 100%;
+	padding: 26px;
+}
+section .content .service .subservices article .text h3{color: #245782;}
+section .content .service .subservices article .text h3 a{
+	color: inherit;
+	text-decoration: none;
+}
+section .content .service .subservices article .text p{padding: 5px;}
+section .content .service .subservices article .text p b,
+section .content .service .subservices article .text p strong{color: #2e6ca0;}
+section .content .service .subservices article .text .button{margin-top: 8px;}
+section .content .service .subservices article .text .button button{
+	border: none;
+	outline: none;
+	padding: 10px 12px;
+	background: #4185C0;
+	color: #FFF;
+	border-radius: 2px;
+	text-shadow: 0 1px 0 rgba(0,0,0,.1);
+	transition: .15s;
+	cursor: pointer;
+}
+section .content .service .subservices article .text .button button:hover{background: #5598D1;}
+section .content .service .subservices article .text .button button:active{
+	background: #275277;
+	text-shadow: none;
+	box-shadow: inset 0 1px 6px rgba(0,0,0,.1);
+	color: rgba(255,255,255,.6);
+}

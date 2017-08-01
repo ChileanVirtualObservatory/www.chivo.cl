@@ -1,0 +1,11 @@
+BeautifulSoup==3.2.1
+Django==1.10.5
+django-ckeditor==5.1.1
+django-extensions==1.7.8
+django-hitcount==1.2.2
+gunicorn==19.6.0
+olefile==0.43
+Pillow==4.0.0
+psycopg2==2.6.2
+six==1.10.0
+uWSGI==2.0.15

@@ -1,0 +1,74 @@
+section .content{
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+section .content .article{
+	width: 100%;
+	flex: 2;
+	background: #FFF;
+	border-radius: 2px;
+	padding: 5px;
+}
+section .content .article .path{
+	background: #F9F9F9;
+	padding: 6px 10px;
+	border-radius: 2px;
+	color: #999;
+}
+section .content .article .path span{
+	color: #666;
+}
+section .content .article .path a{
+	color: inherit;
+	text-decoration: none;
+	transition: .15s;
+}
+section .content .article .path a:hover{
+	text-decoration: underline;
+	color: #78A5CD;
+}
+section .content .article .sub-content{
+	padding: 15px;
+}
+
+
+section div.article div.info{
+	font-size: .9em;
+	color: #999;
+	padding: 0 5px;
+}
+section div.article div.info span{
+	color: #888;
+}
+section div.article div.text{
+	padding: 5px;
+	color: #666;
+}
+section div.article div.text b,
+section div.article div.text strong{
+	color: #333;
+}
+section div.article div.text p{
+	margin: 10px 0;
+}
+section div.article div.text hr{
+	border: none;
+	border-top: 1px dashed #CCC;
+	margin: 20px 0;
+}
+section div.article div.text img{
+	margin: 20px 20px 20px 0;
+}
+section div.article div.text a{
+	color: #2274AE;
+	text-decoration: none;
+}
+section div.article div.text a:hover{
+	color: #42AAF4;
+	text-decoration: underline;
+}
+section div.article div.text a:active{
+	color: #2274AE;
+	text-decoration: underline;
+}

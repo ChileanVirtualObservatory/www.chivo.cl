@@ -1,0 +1,22 @@
+{% extends "base2.html" %}
+
+{% load static %}
+{% block customstyle %}<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.history.css' %}" />{% endblock %}
+{% block title %}ChiVO - Services{% endblock %}
+
+{% block content %}
+	<section id="history">
+{% if histories %}
+{% for history in histories %}
+		<article>
+			<span class="date">{{ history.date|date:"d F Y" }}</span>
+			<div class="content">
+				<h2>{{ history.title }}</h2>
+				<div class="text">{{ history.content|safe }}</div>
+			</div>
+		</article>
+{% endfor %}
+{% endif %}
+	</section>
+{% endblock %}

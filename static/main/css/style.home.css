@@ -1,0 +1,166 @@
+
+body section#home{
+	position: relative;
+	height: 100vh;
+	padding: 60px 5% 5% 5%;
+	background-color: #000;
+	background-size: cover;
+}
+body section#home .background{
+	position: absolute;
+	top: 0; left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+body section#home .background img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	opacity: .7;
+}
+body section#home .content{
+	position: relative;
+	padding: 20px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+body section#home .content .text-box{
+	color: #FFF;
+	max-width: 800px;
+	font-size: 1.1em;
+	text-align: center;
+	text-shadow: 0 1px 5px rgba(0,0,0,.6);
+}
+body section#home .content .text-box h2{
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+body section#home .content .text-box .separator{
+	margin: 30px 0;
+}
+body section#home .content .text-box p{
+	font-size: .9rem;
+}
+body section#home .arrow{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	background: rgba(0,0,0,.6);
+	color: #FFF;
+	height: 70px;
+	width: 60px;
+	padding-bottom: 10px;
+	margin-bottom: -10px;
+	font-size: 40px;
+	line-height: 40px;
+	margin-left: -30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgba(255,255,255,.4);
+	transition: .2s;
+	cursor: default;
+}
+body section#home .arrow.light{
+	color: rgba(255,255,255,.8);
+}
+body section#home .arrow:hover{
+	color: #FFF;
+	margin-bottom: 0px;
+}
+body section#home .arrow:active{
+	color: rgba(255,255,255,.5);
+	margin-bottom: 0px;
+}
+body section#home .arrow:before{
+	content: '\f078';
+	font-family: 'FontAwesome';
+}
+body section#info{
+	height: 50vw;
+	background: #FFF;
+	position: relative;
+	padding: 0;
+	background-size: cover;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+}
+body section#info .video,
+body section#info .about{
+	width: 50%;
+	padding: 6%;
+	padding-top: calc(60px + 2%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+body section#info .video{
+	background-color: #42AAF4;
+	background-image: url(/static/main/img/pattern-zodiac-constellation.jpg);
+	border-right: 2px solid #CCC;
+}
+body section#info .video .content{
+	width: 100%;
+}
+body section#info .video .content h2{margin-bottom: 10px;}
+body section#info .video .content iframe{
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	background:#000;
+	width: 100%;
+}
+body section#info .about{
+	flex: 2;
+	padding: 6%;
+	border-left: 2px solid #CCC;
+}
+body section#info .about .text p{
+	margin: 12px 2px;
+	font-size: .9rem;
+}
+body section#about{
+	height: 100vh;
+	background: #FFF;
+	position: relative;
+	padding: 60px 5% 5% 5%;
+	background-size: cover;
+}
+body section#about .content{
+	width: 100%;
+	position: relative;
+	padding: 0 5%;
+}
+body section#about .content  p{
+	margin: 8px 5px;
+	font-size: .9rem;
+}
+body section#about .content .left{
+	float: left;
+	margin: 8px 20px 20px 0;
+}
+
+@media only screen and (max-width: 980px){
+	body section#info{
+		flex-direction: column;
+		height: auto;
+	}
+	body section#info .video,
+	body section#info .about{
+		width: 100%;
+		padding: calc(60px + 2%) 6%;
+		border: 0;
+	}
+	body section#info .video{
+		border-bottom: 4px solid #CCC;
+	}
+}
